@@ -1,0 +1,35 @@
+{
+	"appId": "com.Ayan.Fetchr",
+	"appName": "Fetchr",
+	"webDir": "build",
+	"server": {
+		"allowNavigation": [
+			"*"
+		],
+		"cleartext": true
+	},
+	"ios": {
+		"allowsArbitraryLoads": true,
+		"allowsArbitraryLoadsInWebContent": true,
+		"allowsLocalNetworking": true,
+		"scheme": "fetchr"
+	},
+	"android": {
+		"allowMixedContent": true,
+		"cleartext": true
+	},
+	"plugins": {
+		"CapacitorHttp": {
+			"enabled": true
+		},
+		"CapacitorAudio": {
+			"enabled": true
+		},
+		"LocalNotifications": {
+			"enabled": true
+		}
+	},
+	"packageClassList": [
+		"LocalNotificationsPlugin"
+	]
+}

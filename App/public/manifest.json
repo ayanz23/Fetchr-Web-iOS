@@ -1,0 +1,17 @@
+{
+  "short_name": "Fetchr",
+  "name": "Fetchr - Pet Monitoring App",
+  "description": "Real-time safety for your best friend",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#CC9966",
+  "background_color": "#F5F1E0",
+  "orientation": "portrait-primary"
+}
