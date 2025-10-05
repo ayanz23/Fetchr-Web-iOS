@@ -1,0 +1,307 @@
+/* InAppAlert.css - Responsive alert component for web and iOS */
+
+.in-app-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 400px;
+  min-width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.in-app-alert--show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.in-app-alert--hide {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Alert types */
+.in-app-alert--voice {
+  border-left: 4px solid #3b82f6;
+}
+
+.in-app-alert--danger {
+  border-left: 4px solid #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.in-app-alert--warning {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+}
+
+.in-app-alert--info {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+}
+
+/* Priority styles */
+.in-app-alert--high {
+  box-shadow: 0 12px 48px rgba(239, 68, 68, 0.25);
+  animation: pulse-high 2s infinite;
+}
+
+.in-app-alert--medium {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.in-app-alert--low {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Content layout */
+.in-app-alert__content {
+  padding: 16px;
+}
+
+.in-app-alert__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.in-app-alert__icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.in-app-alert__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.in-app-alert__close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.in-app-alert__close:hover {
+  background: rgba(107, 114, 128, 0.1);
+  color: #374151;
+}
+
+.in-app-alert__message {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.in-app-alert__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.in-app-alert__action {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.in-app-alert__action:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.in-app-alert__action:active {
+  transform: translateY(0);
+}
+
+/* Danger alert specific actions */
+.in-app-alert--danger .in-app-alert__action {
+  background: #ef4444;
+}
+
+.in-app-alert--danger .in-app-alert__action:hover {
+  background: #dc2626;
+}
+
+/* Warning alert specific actions */
+.in-app-alert--warning .in-app-alert__action {
+  background: #f59e0b;
+}
+
+.in-app-alert--warning .in-app-alert__action:hover {
+  background: #d97706;
+}
+
+/* Info alert specific actions */
+.in-app-alert--info .in-app-alert__action {
+  background: #10b981;
+}
+
+.in-app-alert--info .in-app-alert__action:hover {
+  background: #059669;
+}
+
+/* Animations */
+@keyframes pulse-high {
+  0%, 100% {
+    box-shadow: 0 12px 48px rgba(239, 68, 68, 0.25);
+  }
+  50% {
+    box-shadow: 0 12px 48px rgba(239, 68, 68, 0.4);
+  }
+}
+
+/* iOS specific styles */
+@media (max-width: 768px) {
+  .in-app-alert {
+    top: max(10px, env(safe-area-inset-top) + 5px);
+    right: max(10px, env(safe-area-inset-right) + 5px);
+    left: max(10px, env(safe-area-inset-left) + 5px);
+    max-width: none;
+    min-width: auto;
+    margin: 0;
+    /* Ensure alerts don't cause viewport changes */
+    position: fixed !important;
+    z-index: 999999 !important;
+  }
+  
+  .in-app-alert__content {
+    padding: 12px;
+  }
+  
+  .in-app-alert__title {
+    font-size: 15px;
+  }
+  
+  .in-app-alert__message {
+    font-size: 13px;
+  }
+  
+  .in-app-alert__actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .in-app-alert__action {
+    width: 100%;
+    padding: 10px 16px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .in-app-alert {
+    background: rgba(31, 41, 55, 0.95);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    color: #f9fafb;
+  }
+  
+  .in-app-alert__title {
+    color: #f9fafb;
+  }
+  
+  .in-app-alert__message {
+    color: #d1d5db;
+  }
+  
+  .in-app-alert__close {
+    color: #9ca3af;
+  }
+  
+  .in-app-alert__close:hover {
+    background: rgba(156, 163, 175, 0.1);
+    color: #d1d5db;
+  }
+  
+  .in-app-alert--danger {
+    background: linear-gradient(135deg, rgba(127, 29, 29, 0.2) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+  
+  .in-app-alert--warning {
+    background: linear-gradient(135deg, rgba(146, 64, 14, 0.2) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+  
+  .in-app-alert--info {
+    background: linear-gradient(135deg, rgba(4, 120, 87, 0.2) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .in-app-alert {
+    transition: none;
+    animation: none;
+  }
+  
+  .in-app-alert--show {
+    transform: none;
+    opacity: 1;
+  }
+  
+  .in-app-alert--hide {
+    transform: none;
+    opacity: 0;
+  }
+  
+  .in-app-alert__action {
+    transition: none;
+  }
+  
+  .in-app-alert__action:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .in-app-alert {
+    border: 2px solid;
+  }
+  
+  .in-app-alert--voice {
+    border-color: #0000ff;
+  }
+  
+  .in-app-alert--danger {
+    border-color: #ff0000;
+  }
+  
+  .in-app-alert--warning {
+    border-color: #ff8800;
+  }
+  
+  .in-app-alert--info {
+    border-color: #008800;
+  }
+}

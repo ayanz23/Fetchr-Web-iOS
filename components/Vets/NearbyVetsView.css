@@ -1,0 +1,240 @@
+.nearby-vets-view {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  padding: 20px;
+}
+
+.vets-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vets-header h1 {
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.vets-subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin: 0;
+}
+
+.vets-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vet-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.vet-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.vet-icon {
+  font-size: 32px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.vet-info {
+  flex: 1;
+}
+
+.vet-name {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.vet-address {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.vet-details {
+  margin-bottom: 20px;
+}
+
+.vet-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.contact-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 50px;
+}
+
+.contact-value {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.vet-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.call-button {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.call-button:hover {
+  background-color: #5a8a5a;
+  transform: translateY(-1px);
+}
+
+.email-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.email-button:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.directions-button {
+  background-color: #4A90E2;
+  color: white;
+}
+
+.directions-button:hover {
+  background-color: #357ABD;
+  transform: translateY(-1px);
+}
+
+.action-icon {
+  font-size: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nearby-vets-view {
+    padding: 16px;
+  }
+  
+  .vets-header h1 {
+    font-size: 24px;
+  }
+  
+  .vets-subtitle {
+    font-size: 14px;
+  }
+  
+  .vet-card {
+    padding: 16px;
+  }
+  
+  .vet-name {
+    font-size: 18px;
+  }
+  
+  .vet-actions {
+    flex-direction: column;
+  }
+  
+  .action-button {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .vet-actions {
+    justify-content: flex-start;
+  }
+  
+  .action-button {
+    flex: 0 1 auto;
+    min-width: 120px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .nearby-vets-view {
+    padding: 24px;
+  }
+  
+  .vets-content {
+    max-width: 900px;
+  }
+  
+  .vet-card {
+    padding: 24px;
+  }
+  
+  .vet-name {
+    font-size: 22px;
+  }
+  
+  .vet-address {
+    font-size: 15px;
+  }
+  
+  .contact-label,
+  .contact-value {
+    font-size: 15px;
+  }
+}

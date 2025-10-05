@@ -1,0 +1,104 @@
+.vital-sign-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vital-sign-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.vital-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.vital-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.vital-title {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.vital-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.vital-status {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .vital-sign-card {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .vital-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+  
+  .vital-title {
+    font-size: 13px;
+  }
+  
+  .vital-value {
+    font-size: 16px;
+  }
+  
+  .vital-status {
+    font-size: 11px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+  .vital-sign-card {
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .vital-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+  }
+  
+  .vital-title {
+    font-size: 15px;
+  }
+  
+  .vital-value {
+    font-size: 20px;
+  }
+  
+  .vital-status {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,309 @@
+.manage-safe-zone-view {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.safe-zone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(204, 153, 102, 0.1);
+}
+
+.back-icon {
+  font-size: 18px;
+}
+
+.safe-zone-header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.save-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: var(--accent-dark);
+}
+
+.safe-zone-map-container {
+  flex: 1;
+  position: relative;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+/* Pet marker styles (matching dashboard) */
+.custom-pet-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+}
+
+.pet-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Leaflet map customization (matching dashboard) */
+.safe-zone-map-container .leaflet-container {
+  background-color: #f0f0f0;
+}
+
+.safe-zone-map-container .leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+.safe-zone-map-container .leaflet-control-zoom a {
+  background-color: white !important;
+  border: none !important;
+  color: var(--text-primary) !important;
+  font-size: 18px !important;
+  line-height: 26px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.safe-zone-map-container .leaflet-control-zoom a:hover {
+  background-color: var(--primary-bg) !important;
+  color: var(--accent-color) !important;
+}
+
+.safe-zone-map-container .leaflet-control-zoom a:first-child {
+  border-bottom: 1px solid #e0e0e0 !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.safe-zone-map-container .leaflet-control-zoom a:last-child {
+  border-radius: 0 0 8px 8px !important;
+}
+
+.safe-zone-instructions {
+  padding: 16px;
+  background-color: #F8F9FA;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.safe-zone-instructions p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.safe-zone-instructions strong {
+  color: var(--text-primary);
+}
+
+.safe-zone-controls {
+  padding: 16px;
+  background-color: white;
+  border-top: 1px solid #E0E0E0;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-group label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  min-width: 120px;
+}
+
+.control-group input[type="range"] {
+  flex: 1;
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.radius-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accent-color);
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Responsive adjustments (matching dashboard) */
+@media (max-width: 768px) {
+  .custom-pet-marker {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+  
+  .safe-zone-map-container .leaflet-control-zoom {
+    margin: 10px !important;
+  }
+  
+  .safe-zone-map-container .leaflet-control-zoom a {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .safe-zone-header {
+    padding: 20px;
+  }
+  
+  .safe-zone-header h1 {
+    font-size: 24px;
+  }
+  
+  .back-button {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+  
+  .save-button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .safe-zone-controls {
+    padding: 20px;
+  }
+  
+  .control-group label {
+    font-size: 18px;
+    min-width: 140px;
+  }
+  
+  .control-group input[type="range"] {
+    height: 8px;
+  }
+  
+  .control-group input[type="range"]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .control-group input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .radius-value {
+    font-size: 18px;
+    min-width: 60px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .safe-zone-header {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .safe-zone-header h1 {
+    font-size: 28px;
+  }
+  
+  .back-button {
+    font-size: 20px;
+    padding: 12px 20px;
+  }
+  
+  .save-button {
+    padding: 12px 24px;
+    font-size: 20px;
+  }
+  
+  .safe-zone-controls {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .control-group label {
+    font-size: 20px;
+    min-width: 160px;
+  }
+  
+  .radius-value {
+    font-size: 20px;
+    min-width: 70px;
+  }
+}

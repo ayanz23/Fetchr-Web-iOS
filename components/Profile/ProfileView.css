@@ -1,0 +1,585 @@
+.profile-view {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+}
+
+.profile-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.loading-spinner {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.loading-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.loading-message .loading-spinner {
+  font-size: 32px;
+  margin-bottom: 16px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-message p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.profile-header {
+  padding: 20px 16px 0;
+}
+
+.profile-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.profile-content {
+  padding: 16px;
+}
+
+.profile-section {
+  margin-bottom: 24px;
+}
+
+.profile-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+}
+
+.pets-list {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.pet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pet-item:last-child {
+  border-bottom: none;
+}
+
+.pet-icon {
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.pet-info {
+  flex: 1;
+}
+
+.pet-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.pet-breed {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.pet-age {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.delete-pet-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  opacity: 0.7;
+}
+
+.delete-pet-button:hover {
+  background-color: rgba(220, 38, 38, 0.1);
+  opacity: 1;
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  padding: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.error-message {
+  color: var(--danger-color);
+  background-color: rgba(220, 38, 38, 0.1);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.no-pets-message {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-secondary);
+}
+
+.no-pets-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-pets-message p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+}
+
+.no-pets-message small {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.add-pet-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-pet-button:hover {
+  background-color: rgba(204, 153, 102, 0.1);
+}
+
+.add-icon {
+  font-size: 18px;
+}
+
+.safety-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.safety-button:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.safety-icon {
+  font-size: 20px;
+}
+
+.account-info {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.account-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.account-item:last-child {
+  border-bottom: none;
+}
+
+.account-label {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.account-value {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.sign-out-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--danger-color);
+  border: none;
+  border-radius: var(--border-radius);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sign-out-button:hover {
+  background-color: #B85555;
+  transform: translateY(-1px);
+}
+
+.sign-out-icon {
+  font-size: 18px;
+}
+
+/* User Tags Styles */
+.section-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.user-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  min-height: 40px;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--card-bg), rgba(204, 153, 102, 0.05));
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(204, 153, 102, 0.2);
+}
+
+.user-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(204, 153, 102, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(204, 153, 102, 0.4);
+}
+
+.remove-tag-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-left: 4px;
+}
+
+.remove-tag-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.add-tag-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--card-bg), rgba(204, 153, 102, 0.1));
+  border: 2px dashed var(--accent-color);
+  border-radius: 25px;
+  color: var(--accent-color);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(204, 153, 102, 0.2);
+}
+
+.add-tag-button:hover {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+  color: white;
+  border-style: solid;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(204, 153, 102, 0.3);
+}
+
+.tag-input-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(204, 153, 102, 0.2);
+}
+
+.tag-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid rgba(204, 153, 102, 0.3);
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.tag-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(204, 153, 102, 0.1);
+}
+
+.save-tag-btn, .cancel-tag-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.save-tag-btn {
+  background: linear-gradient(135deg, var(--success-color), #4CAF50);
+  color: white;
+}
+
+.save-tag-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.save-tag-btn:disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-tag-btn {
+  background: linear-gradient(135deg, var(--text-secondary), #6c757d);
+  color: white;
+}
+
+.cancel-tag-btn:hover {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+.predefined-tags {
+  margin-top: 20px;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--card-bg), rgba(204, 153, 102, 0.05));
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(204, 153, 102, 0.2);
+}
+
+.predefined-tags-title {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.predefined-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.predefined-tag {
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid rgba(204, 153, 102, 0.3);
+  border-radius: 20px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.predefined-tag:hover {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+  color: white;
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(204, 153, 102, 0.3);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .profile-header {
+    padding: 24px 20px 0;
+  }
+  
+  .profile-content {
+    padding: 20px;
+  }
+  
+  .profile-section {
+    margin-bottom: 32px;
+  }
+  
+  .profile-section h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .pet-item {
+    padding: 20px;
+  }
+  
+  .pet-name {
+    font-size: 18px;
+  }
+  
+  .pet-breed {
+    font-size: 15px;
+  }
+  
+  .add-pet-button,
+  .safety-button {
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  .account-item {
+    padding: 20px;
+  }
+  
+  .account-label,
+  .account-value {
+    font-size: 18px;
+  }
+  
+  .sign-out-button {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .profile-header {
+    padding: 32px 24px 0;
+  }
+  
+  .profile-content {
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .profile-section {
+    margin-bottom: 40px;
+  }
+  
+  .profile-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .pet-item {
+    padding: 24px;
+  }
+  
+  .pet-name {
+    font-size: 20px;
+  }
+  
+  .pet-breed {
+    font-size: 16px;
+  }
+  
+  .add-pet-button,
+  .safety-button {
+    padding: 24px;
+    font-size: 20px;
+  }
+  
+  .account-item {
+    padding: 24px;
+  }
+  
+  .account-label,
+  .account-value {
+    font-size: 20px;
+  }
+  
+  .sign-out-button {
+    padding: 24px;
+    font-size: 20px;
+  }
+}
